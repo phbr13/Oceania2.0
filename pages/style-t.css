@@ -1,0 +1,505 @@
+@font-face {
+    font-family: 'Adventure';
+    src: url(../fonts/Adventure.otf);
+}
+
+body {
+    background-color: #252525;
+    display: grid;
+    gap: 1.3px;
+    grid-template-columns: 9fr 0.3fr;
+    grid-template-rows: 0.5fr 9fr;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+@keyframes esmaecer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#transicao {
+    opacity: 0;
+    position: absolute;
+    background-color: #101010;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    animation: esmaecer 5s ease-in-out;
+}
+
+div {
+    background-color: #101010;
+    font-size: 30px;
+    color: #8a8a8a;
+}
+
+.item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Adventure';
+    position: relative;
+    overflow: hidden;
+}
+
+.item1 img {
+    position: absolute;
+}
+
+.item1 #pergaminho {
+    width: 175px;
+    z-index: 2;
+}
+
+.item1 #mar {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.item1 h3 {
+    margin: 5px;
+    z-index: 3;
+}
+
+.item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.item2:hover {
+    cursor: pointer;
+    background-color: #252525;
+}
+
+.item3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#oceania2 {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+}
+
+.item4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item4 div {
+    width: 100%;
+}
+
+.item4 div:hover {
+    cursor: pointer;
+    background-color: #252525;
+}
+
+.item4 div:hover img {
+    width: 35px;
+    height: 35px;
+    margin-top: 13px;
+    margin-bottom: 5px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+    }
+}
+
+.item4 div:hover #dice {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+.item4 img {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    transition: all 0.1s ease-in-out;
+}
+
+@keyframes esmaecerdois {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#dado-layout {
+    opacity: 1;
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	backdrop-filter: blur(5px);
+    animation: esmaecerdois 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+
+@keyframes rolling {
+    100% {
+        transform: rotateX(910deg) rotateY(910deg);
+    }
+}
+
+.dice {
+    text-align: none;
+    background-color: transparent;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 0.5s ease;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid #f6f3f0;
+    transform-style: preserve-3d;
+    background: linear-gradient(
+        145deg, #dddbd8, #fff
+    );
+}
+
+.face::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #f6f3f0;
+    transform: translateZ(-1px)
+}
+
+.face::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #131210;
+}
+
+.front {
+    transform: translateZ(50px);
+}
+
+.back {
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.front::after {
+    width: 30px;
+    height: 30px;
+    background: #f63330;
+    margin: -15px 0 0 -15px;
+}
+
+.back::after {
+    margin: -33px 0 0 -28px;
+    box-shadow: 40px 0 #131210,
+    0 25px #131210,
+    40px 25px #131210,
+    0 50px #131210,
+    40px 50px #131210;
+}
+
+.top::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px #131210;
+}
+
+.bottom::after {
+    margin: -34.7px 0 0 -34.7px;
+    box-shadow: 26px 26px #131210,
+    52px 52px #131210,
+    52px 0 #131210,
+    0 52px #131210;
+}
+
+.right::after {
+    margin: -28px 0 0 -28px;
+    box-shadow: 40px 0 #131210,
+    0 40px #131210,
+    40px 40px #131210;
+}
+
+.left::after {
+    margin: -34.7px 0 0 -34.7px;
+    box-shadow: 26px 26px #131210,
+    52px 52px #131210;
+}
+
+#valor-jogada{
+    font-family: 'Adventure';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: wrap;
+    transition: all 0.3s ease-in-out;
+}
+
+#valor-jogada p{
+    margin: 0;
+}
+
+#valor-jogada img{
+    margin: 0;
+    margin-left: 15px;
+    height: 25px;
+    width: 25px;
+}
+
+#valor-jogada:hover img {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+#valor-jogada:hover {
+    cursor: auto;
+    background-color: #101010;
+}
+
+.player {
+    position: absolute;
+    z-index: 9;
+    background-color: transparent;
+    cursor:grab;
+}
+
+.player img {
+    height: 90px;
+}
+
+#player1 {
+    top: 430px;
+    left: 100px;
+}
+
+#player2 {
+    top: 530px;
+    left: 100px;
+}
+
+#player3 {
+    top: 430px;
+    left: 175px;
+}
+
+#player4 {
+    top: 530px;
+    left: 175px;
+}
+
+#slider {
+    position: absolute;
+    background-color: #101010;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    left: 300vh;
+    transition: all 0.8s ease;
+    overflow: auto;
+}
+
+#slider::-webkit-scrollbar {
+    background-color: #f6333000;
+}
+
+#slider::-webkit-scrollbar-thumb {
+    background-color: #252525;
+}
+
+#slider #titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+#slider #titulo h1 {
+    font-family: 'Adventure';
+    font-size: 100px;
+    margin: 0;
+}
+
+#slider #titulo img {
+    height: 100px;
+    margin-left: 30px;
+}
+
+#slider #conteudo {
+    padding-left: 50px;
+    font-family: 'Roboto', sans-serif;
+    width: 85%;
+    color:rgb(194, 194, 194)
+}
+
+#slider #interacao {
+    padding-left: 50px;
+    width: 35%;
+}
+
+#slider #interacao form {
+    display: flex;
+	flex-direction: column;
+}
+
+#slider #interacao form label {
+    font-family: 'Roboto', sans-serif;
+    color:rgb(194, 194, 194);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	cursor: pointer;
+    margin-bottom: 20px;
+    padding-inline: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: solid 3px rgba(194, 194, 194, 0);
+}
+
+#slider #interacao form label:hover {
+    background-color: #8a8a8a3a;
+}
+
+#slider #interacao form label input[type="radio"] {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 50%;
+    background-color: rgb(194, 194, 194);
+    transform: scale(0);
+    transition: all 0.1s ease;
+}
+
+#slider #interacao form label input[type="radio"]:checked {
+    transform: scale(1);
+}
+
+#slider #interacao form label input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+#slider #botao {
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#slider #botao div {
+    color: rgb(194, 194, 194);
+    width: min-content;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #252525;
+    transition: all 0.3s ease;
+}
+
+#slider #botao div:hover {
+    cursor: pointer;
+    background-color: #2e2e2e;
+}
+
+#slider #imagem {
+    padding-left: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+
+#slider #imagem img{
+    border-radius: 10px;
+    height: 300px;
+}
+
+#slider2 {
+    position: absolute;
+    background-color: #101010;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    left: 300vh;
+    transition: all 0.8s ease;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#slider2 h1{
+    font-family: 'Adventure';
+    font-size: 230px;
+    margin: 10px;
+}
+
+#slider2 p{
+    font-family: 'Roboto';
+}

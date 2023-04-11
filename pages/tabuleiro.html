@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/compass.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style-t.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Conheça A Oceania</title>
+</head>
+<body>
+    <div id="transicao"></div>
+    <audio id="roll-dice" style="display: none;">
+        <source src="../audios/rolling_dice.wav" type="audio/mpeg">
+    </audio>
+    <audio id="win" style="display: none;">
+        <source src="../audios/win.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pace" style="display: none;">
+        <source src="../audios/pace.wav" type="audio/mpeg">
+    </audio>
+    <audio id="option" style="display: none;">
+        <source src="../audios/option.wav" type="audio/mpeg">
+    </audio>
+    <audio id="lose" style="display: none;">
+        <source src="../audios/lose.wav" type="audio/mpeg">
+    </audio>
+    <audio id="win2" style="display: none;">
+        <source src="../audios/win2.mp3" type="audio/mpeg">
+    </audio>
+    <div class="item1">
+        <img id="mar" src="../imgs/mar.svg" alt="">
+        <img id="pergaminho" src="../imgs/pergaminho.svg" alt="">
+        <h3>Conheça A Oceania</h3>
+    </div>
+    <div class="item2">
+        <a style="height: 35px;" href="../index.html">
+            <img src="../imgs/sair.png" alt="">
+        </a>
+    </div>
+    <div class="item3">
+        <div id="player1"class="player">
+            <img src="../imgs/player1.png" alt="">
+        </div>
+        <div id="player2"class="player">
+            <img src="../imgs/player2.png" alt="">
+        </div>
+        <div id="player3"class="player">
+            <img src="../imgs/player3.png" alt="">
+        </div>
+        <div id="player4"class="player">
+            <img src="../imgs/player4.png" alt="">
+        </div>
+        <img style="z-index: 1;" src="../imgs/tabuleiro.svg" alt="">
+        <img src="../imgs/oceania2.svg" id="oceania2" alt="">
+    </div>
+    <div style="text-align: center" class="item4">
+        <div onclick="carta('perguntaMortal')">
+            <img src="../imgs/carta-cavera.svg" alt="">
+        </div>
+        <div onclick="carta('bolinha')">
+            <img src="../imgs/carta-bola.svg" alt="">
+        </div>
+        <div onclick="carta('desafio')">
+            <img src="../imgs/carta-desafio.svg" alt="">
+        </div>
+        <div onclick="carta('pergunta')">
+            <img src="../imgs/carta-pergunta.svg" alt="">
+        </div>
+        <div onclick="carta('curiosidade')">
+            <img src="../imgs/carta-curiosidade.svg" alt="">
+        </div>
+        <div id="dado" onclick="rollingStones()">
+            <img id="dice" src="../imgs/dice.svg" alt="">
+        </div>
+        <div id="valor-jogada">
+        </div>
+    </div>
+    <script src="script-t.js"></script>
+</body>
+</html>

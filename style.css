@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Adventure';
+    src: url(fonts/Adventure.otf);
+}
+
+body {
+    overflow: hidden;
+    background-color: #202124;
+}
+
+#fundo, #titulo {
+    width: 200vh;
+    height: 95vh;
+}
+
+#fundo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+#fundo img {
+    width: 250vh;
+    height: 150vh;
+    transform: translateX(100px);
+}
+
+#titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Adventure', sans-serif;
+    font-size: 100px;
+    width: 500px;
+    text-align: center;
+    line-height: 95%;
+    margin: 0;
+    color: aliceblue;
+}
+
+@keyframes pisca {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes start {
+    0%{
+        opacity: 0;
+        text-shadow: 0 0 0px #ffffff
+    }
+    15% {
+        opacity: 1;
+        text-shadow: 0 0 25px #6feafa
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes desaparecer {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes escurecer {
+    0%{
+        background-color: #202124;
+    }
+    100% {
+        background-color: #131313;
+    }
+}
+
+#titulo h3 {
+    font-family: 'Golos Text', sans-serif;
+    font-style: italic;
+    word-spacing: 0.50em;
+    letter-spacing: 5px;
+    animation: pisca 1.3s infinite ease-in-out;
+    color: rgb(226, 226, 226);
+}
+
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sound {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 25px
+}
+
+#sound img {
+    height: 35px;
+}
+
+#sound img:hover {
+    cursor: pointer;
+}
